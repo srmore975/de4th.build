@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>De4th.build — Automated Discord Server Builder &amp; YouTube Notifier</title>
+  <meta name="description" content="Auto-builds and manages your Discord community server — roles, channels, and YouTube upload notifications. A local desktop app, your bot, your data." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", system-ui, sans-serif; background: #1e1f22; color: #dbdee1; line-height: 1.7; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 56px 24px 96px; }
+    .logo { width: 56px; height: 56px; border-radius: 14px; background: #5865f2; color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 30px; }
+    h1 { font-size: 40px; color: #ffffff; margin: 18px 0 6px; letter-spacing: .5px; }
+    .tagline { font-size: 18px; color: #949ba4; margin-bottom: 28px; }
+    .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+    .badge { background: #2b2d31; border: 1px solid #3c3f45; border-radius: 999px; padding: 6px 14px; font-size: 13px; color: #b5bac1; }
+    h2 { font-size: 24px; color: #ffffff; margin: 48px 0 16px; }
+    .sub { color: #949ba4; font-size: 15px; margin-bottom: 24px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .card { background: #2b2d31; border: 1px solid #3c3f45; border-radius: 12px; padding: 20px; }
+    .card .ico { font-size: 26px; margin-bottom: 10px; }
+    .card h3 { font-size: 17px; color: #ffffff; margin-bottom: 8px; }
+    .card p { font-size: 14px; color: #b5bac1; }
+    ol, ul { margin: 12px 0 12px 22px; }
+    li { margin: 6px 0; }
+    .note { background: #2b2d31; border-left: 4px solid #23a55a; border-radius: 8px; padding: 16px 20px; margin: 20px 0; font-size: 14px; }
+    .cta { display: inline-block; background: #5865f2; color: #fff; font-weight: 600; text-decoration: none; padding: 12px 24px; border-radius: 8px; margin-top: 24px; }
+    .cta:hover { opacity: .85; }
+    a { color: #00b0f4; }
+    .muted { color: #949ba4; font-size: 13px; }
+    footer { margin-top: 64px; border-top: 1px solid #3c3f45; padding-top: 20px; font-size: 13px; color: #949ba4; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">D</div>
+    <h1>De4th.build</h1>
+    <p class="tagline">Automated Discord server builder &amp; YouTube notifier for content creators.</p>
+
+    <div class="badges">
+      <span class="badge">Desktop app (Windows)</span>
+      <span class="badge">No API keys needed</span>
+      <span class="badge">On-device, encrypted</span>
+      <span class="badge">Open source</span>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="ico">🏗️</div>
+        <h3>One-click server building</h3>
+        <p>Deploy a complete Discord server layout — categories, text &amp; voice channels, roles with permissions, and a welcome message — through your own bot.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🛠️</div>
+        <h3>Visual template editor</h3>
+        <p>Design your layout in the desktop app, tweak roles and topics, then save, export, or import JSON templates to reuse anywhere.</p>
+      </div>
+      <div class="card">
+        <div class="ico">▶️</div>
+        <h3>YouTube notifier</h3>
+        <p>Posts a rich embed with the video thumbnail to your server the moment you upload — using YouTube's public feed, so no key required.</p>
+      </div>
+    </div>
+
+    <h2>How it works</h2>
+    <ol>
+      <li>Create a bot in the <b>Discord Developer Portal</b> and copy its token.</li>
+      <li>Paste the token into <b>De4th.build</b> and invite the bot to your server.</li>
+      <li>Design your layout (or start from the built-in YouTuber template).</li>
+      <li>Hit <b>Build server</b> — roles, categories, channels, and the welcome message are created for you.</li>
+      <li>Turn on the YouTube notifier and new uploads get announced automatically.</li>
+    </ol>
+
+    <div class="note">
+      <b>Note:</b> a Discord <i>bot</i> token cannot create a brand-new server (Discord only allows that with a user account), so De4th.build sets everything up inside a server you create and add the bot to.
+    </div>
+
+    <h2>Your data stays yours</h2>
+    <p class="sub">De4th.build is a local desktop app. There are no accounts, no telemetry, and no servers operated by us.</p>
+    <ul>
+      <li>Your bot token is stored <b>encrypted</b> on your device (Windows DPAPI) and is only sent to the Discord API.</li>
+      <li>Server layouts and the last announced video ID live in a local settings file.</li>
+      <li>The app only ever talks to <b>discord.com</b> and YouTube's public feeds.</li>
+    </ul>
+    <a class="cta" href="https://github.com/srmore975/de4th.build" target="_blank" rel="noopener">View on GitHub →</a>
+
+    <footer>
+      <p>
+        De4th.build &middot; <a href="./legal/terms-of-service.html">Terms of Service</a> &middot; <a href="./legal/privacy-policy.html">Privacy Policy</a>
+      </p>
+      <p class="muted" style="margin-top:8px">Not affiliated with Discord or YouTube. Discord and YouTube are trademarks of their respective owners.</p>
+    </footer>
+  </div>
+</body>
+</html>
