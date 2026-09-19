@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'none'" />
+  <title>De4th.build</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">D</div>
+      <div>
+        <h1>De4th.build</h1>
+        <span class="sub">Auto-create Discord servers &amp; announce uploads</span>
+      </div>
+    </div>
+    <div class="status">
+      <span id="botDot" class="dot off"></span>
+      <span id="botStatusText">Bot offline</span>
+      <span class="sep">|</span>
+      <span id="ytDot" class="dot off"></span>
+      <span id="ytStatusText">Notifier off</span>
+    </div>
+  </header>
+
+  <nav>
+    <button class="tab active" data-tab="setup">🔧 Setup</button>
+    <button class="tab" data-tab="builder">🏗️ Server Builder</button>
+    <button class="tab" data-tab="youtube">▶️ YouTube Notifier</button>
+  </nav>
+
+  <main>
+    <section id="tab-setup" class="panel active">
+      <h2>Step 1 — Connect your Discord bot</h2>
+      <ol class="steps">
+        <li>Create a bot at <a href="#" class="link" data-url="https://discord.com/developers/applications">discord.com/developers/applications</a> (Applications → New Application → Bot → "Reset Token").</li>
+        <li>Enable <b>Gateway Intents</b> → toggle on <b>Server Members</b> + <b>Message Content</b> (GUILD intents only, no privileged intents needed).</li>
+        <li>Copy the bot <b>Token</b> and paste it below.</li>
+      </ol>
+      <div class="row">
+        <input id="tokenInput" type="password" placeholder="Paste bot token here..." autocomplete="off" />
+        <button id="startBot" class="primary">Start bot</button>
+        <button id="stopBot" class="ghost">Stop</button>
+      </div>
+      <div class="row">
+        <button id="inviteBtn" class="accent" disabled>Invite bot to your server →</button>
+        <span class="hint">Opens a link — pick your server (or create one manually first, then add the bot).</span>
+      </div>
+      <div class="card">
+        <h3>Saves</h3>
+        <p class="muted">Your token is stored <b>encrypted</b> (Windows DPAPI) on this PC. Nothing is ever sent anywhere except to the Discord API.</p>
+      </div>
+    </section>
+
+    <section id="tab-builder" class="panel">
+      <h2>Step 2 — Design &amp; build your server</h2>
+      <div class="row wrap">
+        <label>Server name:
+          <input id="serverName" type="text" value="My Community" />
+        </label>
+        <label>Target server:
+          <select id="guildSelect"><option value="">— start bot first —</option></select>
+        </label>
+        <button id="refreshGuilds" class="ghost small">Refresh</button>
+      </div>
+
+      <div class="row wrap">
+        <button id="addCategory" class="ghost small">+ Add category</button>
+        <button id="noFrills" class="ghost small">Load basic template</button>
+        <button id="youtuberTpl" class="ghost small">Load YouTuber template</button>
+        <button id="exportJson" class="ghost small">Export JSON</button>
+        <button id="importJson" class="ghost small">Import JSON</button>
+      </div>
+
+      <div id="layoutEditor"></div>
+
+      <div class="row" style="margin-top:16px">
+        <button id="buildBtn" class="primary big">⚡ Build server now</button>
+        <span id="buildProgress" class="muted"></span>
+      </div>
+      <div id="buildReport" class="card hidden"></div>
+    </section>
+
+    <section id="tab-youtube" class="panel">
+      <h2>Step 3 — YouTube upload notifier</h2>
+      <p class="muted">Posts an embed to a channel whenever your channel uploads a new video. Works while the app is open.</p>
+      <div class="row wrap">
+        <label>YouTube channel (URL or @handle):
+          <input id="ytChannel" type="text" placeholder="https://www.youtube.com/@yourchannel" />
+        </label>
+        <label>Announce in channel:
+          <input id="ytChannelName" type="text" value="announcements" />
+        </label>
+        <label>Mention role (optional):
+          <input id="ytRole" type="text" placeholder="e.g. Fans" />
+        </label>
+        <label>Check every (min):
+          <input id="ytInterval" type="number" value="10" min="2" />
+        </label>
+      </div>
+      <div class="row wrap">
+        <label>Notify server:
+          <select id="ytGuild"></select>
+        </label>
+        <button id="ytStart" class="primary">Start notifier</button>
+        <button id="ytStop" class="ghost">Stop</button>
+      </div>
+      <div class="card">
+        <h3>How it works</h3>
+        <ul class="muted">
+          <li>Uses YouTube's public RSS feed — no API key needed.</li>
+          <li>First run sets a baseline (no spam from old videos).</li>
+          <li>Remembers the last announced video, so nothing posts twice.</li>
+          <li>The app must stay open while you want notifications to fire.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="log" class="log"></div>
+  </footer>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

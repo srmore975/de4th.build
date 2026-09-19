@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>De4th.build — Privacy Policy</title>
+  <style>
+    body { font-family: "Segoe UI", system-ui, sans-serif; margin: 0; background: #1e1f22; color: #dbdee1; line-height: 1.7; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 48px 24px 96px; }
+    h1 { font-size: 28px; margin-bottom: 4px; color: #ffffff; }
+    .updated { color: #949ba4; font-size: 14px; }
+    h2 { font-size: 19px; margin-top: 36px; color: #ffffff; border-bottom: 1px solid #3c3f45; padding-bottom: 6px; }
+    p, li { font-size: 15px; }
+    .note { background: #2b2d31; border: 1px solid #3c3f45; border-left: 4px solid #5865f2; border-radius: 6px; padding: 14px 18px; margin: 16px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    th, td { border: 1px solid #3c3f45; padding: 10px; text-align: left; }
+    th { background: #2b2d31; color: #ffffff; }
+    a { color: #00b0f4; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>De4th.build — Privacy Policy</h1>
+    <p class="updated">Effective date: September 19, 2026</p>
+
+    <div class="note">
+      <strong>TL;DR:</strong> De4th.build is a desktop application. It does not operate any servers and does not collect, transmit, or sell your personal data. Everything it does happens on your own computer or directly through Discord's API using your own bot.
+    </div>
+
+    <h2>1. What the App Is</h2>
+    <p>De4th.build is a local desktop tool that you run on your own computer. It connects to Discord using a bot token that <em>you</em> create and provide. It also reads public YouTube RSS feeds to detect new uploads.</p>
+
+    <h2>2. Data Processed by the App</h2>
+    <table>
+      <tr><th>Data</th><th>Where it is stored</th><th>Who can access it</th><th>Retention</th></tr>
+      <tr><td>Discord bot token</td><td>Your computer, <strong>encrypted</strong> using your operating system's encryption (Windows DPAPI)</td><td>Only you (and the Discord API while the App is running)</td><td>Until you delete it or uninstall the App</td></tr>
+      <tr><td>Server layout / templates you design</td><td>Your computer, in a local settings file</td><td>Only you</td><td>Until you delete the file</td></tr>
+      <tr><td>Last announced YouTube video ID</td><td>Your computer, in a local settings file</td><td>Only you</td><td>Overwritten as new videos are announced</td></tr>
+      <tr><td>YouTube channel info &amp; video titles/thumbnails</td><td>Communications in memory</td><td>Only you</td><td>Not stored</td></tr>
+      <tr><td>Discord server/channel names and IDs it operates on</td><td>Communications with the Discord API</td><td>Only you</td><td>Not stored by the App</td></tr>
+    </table>
+
+    <h2>3. What We Collect From You</h2>
+    <p>We do <strong>not</strong> collect any personal data. There is no account, no telemetry, no analytics, no login, and no tracking. The App does not contain any network endpoint that receives data from you.</p>
+
+    <h2>4. Where Your Data Goes</h2>
+    <p>When you use the App, it communicates only with services you direct it to:</p>
+    <ul>
+      <li><strong>Discord API</strong> (<code>discord.com</code>) — to operate your bot and build your server. Subject to the <a href="https://discord.com/privacy" target="_blank">Discord Privacy Policy</a>.</li>
+      <li><strong>YouTube public feeds</strong> (<code>youtube.com</code>) — to check for new uploads from the channel you specify. Subject to the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</li>
+    </ul>
+    <p>No third party, and no server we operate, ever receives your bot token or your settings.</p>
+
+    <h2>5. Data You Configure the Bot to Post</h2>
+    <p>If you enable the YouTube notifier, the App posts a message (video title, link, thumbnail, and optional role mention) into a Discord channel you choose. This message becomes visible to members of that server and is governed by Discord's systems, not by the App.</p>
+
+    <h2>6. Third-Party Services</h2>
+    <p>The App is not affiliated with Discord or YouTube. Your use of Discord and YouTube is subject to their respective Terms of Service and Privacy Policies. You should review them:
+    <br /><a href="https://discord.com/privacy" target="_blank">Discord Privacy Policy</a> &middot; <a href="https://policies.google.com/privacy" target="_blank">Google/YouTube Privacy Policy</a></p>
+
+    <h2>7. Data Deletion</h2>
+    <p>Because all data lives on your device, you can delete it at any time by:</p>
+    <ul>
+      <li>Deleting the App's settings file (stored in your user data folder, e.g. <code>%APPDATA%\De4th.build</code> on Windows);</li>
+      <li>Resetting your Discord bot token in the Discord Developer Portal; or</li>
+      <li>Uninstalling the App (note: some built apps leave a settings file behind — this file contains no personal data beyond your own server layout and the encrypted token placeholder).</li>
+    </ul>
+
+    <h2>8. Children's Privacy</h2>
+    <p>The App is not directed at children under 13 (or the applicable age of consent in your region) and does not knowingly collect information from them.</p>
+
+    <h2>9. Security</h2>
+    <p>Your Discord bot token is encrypted at rest using your operating system's user-level encryption. It is decrypted only in memory, only while the App is running, and only sent to the Discord API. No logs of the token are written.</p>
+
+    <h2>10. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes will be reflected by the "Effective date" at the top of this page.</p>
+
+    <h2>11. Contact</h2>
+    <p>For questions about this Privacy Policy, contact the server owner or creator of your instance of the App.</p>
+  </div>
+</body>
+</html>

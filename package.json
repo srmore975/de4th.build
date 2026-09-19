@@ -1,0 +1,43 @@
+{
+  "name": "de4th.build",
+  "version": "1.0.0",
+  "description": "Automated Discord server builder & YouTube notifier for YouTubers",
+  "author": "YouTuber Tools",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win",
+    "pack": "electron-builder --win --dir"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "dependencies": {
+    "discord.js": "^14.17.3"
+  },
+  "build": {
+    "appId": "com.youtuber.serverbuilder",
+    "productName": "De4th.build",
+    "files": [
+      "main.js",
+      "preload.js",
+      "store.js",
+      "serverBuilder.js",
+      "youTubeNotifier.js",
+      "renderer/**/*"
+    ],
+    "win": {
+      "signAndEditExecutable": false,
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
+    }
+  }
+}
